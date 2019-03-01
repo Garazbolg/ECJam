@@ -10,7 +10,8 @@ config_version=3
 
 [application]
 
-config/name="ECJam"
+config/name="ECGameJamProto"
+run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
 [rendering]
