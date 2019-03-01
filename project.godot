@@ -10,10 +10,19 @@ config_version=3
 
 [application]
 
-config/name="ECGameJamProto"
+config/name="ECJam"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scripts/Global.gd"
+
+[display]
+
+window/size/height=720
+
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

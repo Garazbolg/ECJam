@@ -1,13 +1,20 @@
 extends KinematicBody2D
+# Constants
+const UP = Vector2(0,-1)
 
+# Variables
 var motion = Vector2(0,0)
 var direction = 0
-const planet_position = Vector2(464,304)
 var velocity = Vector2(0,0)
-const UP = Vector2(0,-1)
-const MAX_SPEED = 10000
-const GRAVITY_FORCE = 9800
-const JUMP_FORCE = 6000
+
+# Inputs
+export (float) var MAX_SPEED = 10000
+export (float) var GRAVITY_FORCE = 9800
+export (float) var JUMP_FORCE = 6000
+export (NodePath) var planet;
+
+func _ready():
+	planet = get_node(planet)
 
 func _physics_process(delta):
 	var pos = get_player_relative_position()
@@ -39,7 +46,7 @@ func _physics_process(delta):
 	pass
 	
 func get_player_relative_position() :
-	return get_global_position() - planet_position
+	return get_global_position() - planet.get_global_position()
 	
 func get_angle(position):
 	return UP.angle_to(position)
