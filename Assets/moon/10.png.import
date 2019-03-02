@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/03.png-3064240d57feba291038e4cf70386b6a.stex"
+path="res://.import/10.png-398096ea71a15cb06fd3cd8b02f98a46.stex"
 
 [deps]
 
-source_file="res://moon/03.png"
-dest_files=[ "res://.import/03.png-3064240d57feba291038e4cf70386b6a.stex" ]
+source_file="res://Assets/moon/10.png"
+dest_files=[ "res://.import/10.png-398096ea71a15cb06fd3cd8b02f98a46.stex" ]
 
 [params]
 
