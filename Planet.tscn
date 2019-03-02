@@ -1,19 +1,23 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://Assets/circle.png" type="Texture" id=1]
-[ext_resource path="res://Assets/sky.png" type="Texture" id=2]
-[ext_resource path="res://Assets/moon/00.png" type="Texture" id=3]
-[ext_resource path="res://Assets/moon/01.png" type="Texture" id=4]
-[ext_resource path="res://Assets/moon/02.png" type="Texture" id=5]
-[ext_resource path="res://Assets/moon/03.png" type="Texture" id=6]
-[ext_resource path="res://Assets/moon/04.png" type="Texture" id=7]
-[ext_resource path="res://Assets/moon/05.png" type="Texture" id=8]
-[ext_resource path="res://Assets/moon/06.png" type="Texture" id=9]
-[ext_resource path="res://Assets/moon/07.png" type="Texture" id=10]
-[ext_resource path="res://Assets/moon/08.png" type="Texture" id=11]
-[ext_resource path="res://Assets/moon/09.png" type="Texture" id=12]
-[ext_resource path="res://Assets/moon/10.png" type="Texture" id=13]
-[ext_resource path="res://Assets/moon/11.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Planet.gd" type="Script" id=1]
+[ext_resource path="res://Assets/circle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sky.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/KeyBlack.shader" type="Shader" id=4]
+[ext_resource path="res://Assets/moon/00.png" type="Texture" id=5]
+[ext_resource path="res://Assets/moon/01.png" type="Texture" id=6]
+[ext_resource path="res://Assets/moon/02.png" type="Texture" id=7]
+[ext_resource path="res://Assets/moon/03.png" type="Texture" id=8]
+[ext_resource path="res://Assets/moon/04.png" type="Texture" id=9]
+[ext_resource path="res://Assets/moon/05.png" type="Texture" id=10]
+[ext_resource path="res://Assets/moon/06.png" type="Texture" id=11]
+[ext_resource path="res://Assets/moon/07.png" type="Texture" id=12]
+[ext_resource path="res://Assets/moon/08.png" type="Texture" id=13]
+[ext_resource path="res://Assets/moon/09.png" type="Texture" id=14]
+[ext_resource path="res://Assets/moon/10.png" type="Texture" id=15]
+[ext_resource path="res://Assets/moon/11.png" type="Texture" id=16]
+[ext_resource path="res://Assets/house.png" type="Texture" id=17]
+[ext_resource path="res://Assets/forest.png" type="Texture" id=18]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -39,18 +43,33 @@ tracks/0/keys = {
 "values": [ 0.0, -360.0 ]
 }
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="ShaderMaterial" id=4]
+
+render_priority = 0
+shader = ExtResource( 4 )
+
+[sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "default",
 "speed": 0.25
 } ]
+_sections_unfolded = [ "Resource" ]
 
-[node name="Planet" type="StaticBody2D"]
+[node name="Planet" type="Node2D"]
 
-position = Vector2( 0, 421.248 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+fullmoon_frame = 6
+moon = NodePath("Sky/moon")
+house = "house"
+forest = "forest"
+
+[node name="Ground" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -59,29 +78,35 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="Ground" index="0"]
 
 scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-shape = SubResource( 1 )
-
-[node name="Sprite2" type="Sprite" parent="." index="2"]
-
-rotation = -0.223483
-scale = Vector2( 4, 4 )
-z_index = -100
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" index="1"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sky" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+rotation = -1.65762
+scale = Vector2( 4, 4 )
+z_index = -100
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Animation", "Transform" ]
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2" index="0"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sky" index="0"]
 
 root_node = NodePath("..")
 autoplay = "rotate"
@@ -92,15 +117,31 @@ anims/rotate = SubResource( 2 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="moon" type="AnimatedSprite" parent="Sprite2" index="1"]
+[node name="moon" type="AnimatedSprite" parent="Sky" index="1"]
 
+material = SubResource( 4 )
 position = Vector2( 241.047, -107.177 )
 rotation = 1.0472
 scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 3 )
+frames = SubResource( 5 )
 animation = "default"
-frame = 6
+frame = 11
 playing = true
+_sections_unfolded = [ "Material", "Transform" ]
+
+[node name="house" type="Sprite" parent="." index="2"]
+
+show_behind_parent = true
+position = Vector2( -11.115, -767.15 )
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="forest" type="Sprite" parent="." index="3"]
+
+show_behind_parent = true
+position = Vector2( 0.18078, 752.608 )
+rotation = 3.14159
+texture = ExtResource( 18 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 

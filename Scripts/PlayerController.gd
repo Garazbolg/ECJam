@@ -15,6 +15,7 @@ export (NodePath) var planet;
 
 func _ready():
 	planet = get_node(planet)
+	set_physics_process(true)
 
 func _physics_process(delta):
 	var pos = get_player_relative_position()
