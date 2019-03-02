@@ -1,0 +1,77 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://circle.png" type="Texture" id=1]
+[ext_resource path="res://sky.png" type="Texture" id=2]
+[ext_resource path="res://Sprite.gd" type="Script" id=3]
+[ext_resource path="res://moon/00.png" type="Texture" id=4]
+[ext_resource path="res://moon/01.png" type="Texture" id=5]
+[ext_resource path="res://moon/02.png" type="Texture" id=6]
+[ext_resource path="res://moon/03.png" type="Texture" id=7]
+[ext_resource path="res://moon/04.png" type="Texture" id=8]
+[ext_resource path="res://moon/05.png" type="Texture" id=9]
+[ext_resource path="res://moon/06.png" type="Texture" id=10]
+[ext_resource path="res://moon/07.png" type="Texture" id=11]
+[ext_resource path="res://moon/08.png" type="Texture" id=12]
+[ext_resource path="res://moon/09.png" type="Texture" id=13]
+[ext_resource path="res://moon/10.png" type="Texture" id=14]
+[ext_resource path="res://moon/11.png" type="Texture" id=15]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 688.0
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 0.25
+} ]
+
+[node name="Planet" type="StaticBody2D"]
+
+position = Vector2( 0, 421.248 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="2"]
+
+scale = Vector2( 4, 4 )
+z_index = -100
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="moon" type="AnimatedSprite" parent="Sprite2" index="0"]
+
+position = Vector2( 241.047, -107.177 )
+rotation = 1.0472
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 3 )
+animation = "default"
+frame = 3
+playing = true
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+
