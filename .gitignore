@@ -1,0 +1,16 @@
+
+PrototypeUnity/\.vs/
+
+PrototypeUnity/Builds/
+
+PrototypeUnity/Library/
+
+PrototypeUnity/Logs/
+
+PrototypeUnity/obj/
+
+PrototypeUnity/Temp/
+
+*.csproj
+
+*.sln

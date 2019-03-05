@@ -1,0 +1,301 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &705408127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 705408128}
+  - component: {fileID: 705408129}
+  m_Layer: 0
+  m_Name: CropManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &705408128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705408127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2371013825713216359}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &705408129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705408127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520cedf283757724e85282c58ac491be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropTypes:
+  - name: Apple Tree
+    cropStages:
+    - minDaysToGrow: 1
+      growthCondition:
+        script: 
+      OnStart:
+        script: 
+      OnEnd:
+        script: 
+      OnHarvest:
+        script: 
+      OnWerewolfContact:
+        script: 'kill
+
+          damage'
+      HP: 1
+    - minDaysToGrow: 1
+      growthCondition:
+        script: 
+      OnStart:
+        script: 
+      OnEnd:
+        script: 
+      OnHarvest:
+        script: 
+      OnWerewolfContact:
+        script: 'kill
+
+          damage'
+      HP: 2
+    - minDaysToGrow: 5
+      growthCondition:
+        script: 
+      OnStart:
+        script: 
+      OnEnd:
+        script: 
+      OnHarvest:
+        script: food 4
+      OnWerewolfContact:
+        script: 'kill
+
+          damage'
+      HP: 3
+    - minDaysToGrow: 50
+      growthCondition:
+        script: 
+      OnStart:
+        script: 
+      OnEnd:
+        script: 
+      OnHarvest:
+        script: 
+      OnWerewolfContact:
+        script: destroy
+      HP: 3
+    viewPrefab: {fileID: 9107143928819659692, guid: b31673aaad6064442aba0057ec2b0310,
+      type: 3}
+  heartPrefab: {fileID: 2590534201456632966, guid: 7c3538041ea5ba24390ee90895c1bd71,
+    type: 3}
+--- !u!1 &2371013825713216358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2371013825713216359}
+  - component: {fileID: 2371013825713216352}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2371013825713216359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371013825713216358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9815239, y: -7.037189, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 705408128}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2371013825713216352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371013825713216358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6995fa1054b479a4d81a7f8f08935aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData:
+    numberOfWWToSpawn: 5
+    cycles:
+    - name: DN
+      timePerStage: 5
+      stages:
+      - name: Day - Sunrise
+        onStart:
+          script: 'newday
+
+            bed 0'
+        onEnd:
+          script: 
+      - name: Day - Morning
+        onStart:
+          script: eat
+        onEnd:
+          script: 
+      - name: Day - Noon
+        onStart:
+          script: eat
+        onEnd:
+          script: 
+      - name: Day - Afternoon
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Day - Evening
+        onStart:
+          script: bed 1
+        onEnd:
+          script: eat
+      - name: Night - Dusk
+        onStart:
+          script: 'timescale 10
+
+            spawnwolves'
+        onEnd:
+          script: 
+      - name: 'Night - '
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Night
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Night
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Night - Dawn
+        onStart:
+          script: despawnwolves
+        onEnd:
+          script: timescale 1
+      startingStage: 9
+    - name: Seasons
+      timePerStage: 90
+      stages:
+      - name: Spring
+        onStart:
+          script: werewolves +1
+        onEnd:
+          script: 
+      - name: Summer
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Autumn
+        onStart:
+          script: werewolves +1
+        onEnd:
+          script: 
+      - name: Winter
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      startingStage: 0
+    - name: Lunar
+      timePerStage: 50
+      stages:
+      - name: New Moon
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Waxing Crescent
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: First Quarter
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Waxing Gibbous
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Full Moon
+        onStart:
+          script: 'timescale 1
+
+            timescalelock 1'
+        onEnd:
+          script: timescalelock 0
+      - name: Waning Gibbous
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Last Quarter
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      - name: Waning Crescent
+        onStart:
+          script: 
+        onEnd:
+          script: 
+      startingStage: 0
+    foodSupply: 30
+    seedAmount: 5
+    maxDaysHungry: 10
+    selectedSeed: 0
+    generateSockets: 1
+    socketDensity: 10
+    hadKids: 0
+    playerCharacter:
+      Speed: 10
+      Age: 20
+      AgeOfDeath: 70
+      DaysHungry: 0
+      selfish: 0
+    characters: []
+  player: {fileID: 0}
+  running: 1
+  GoingToBed: 0
+  secondsBeforeNextKid: 1
+  gameOverScreen_WW: {fileID: 0}
+  gameOverScreen_Extinct: {fileID: 0}
