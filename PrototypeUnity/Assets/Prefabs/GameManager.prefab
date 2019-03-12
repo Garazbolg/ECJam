@@ -54,7 +54,7 @@ MonoBehaviour:
       OnEnd:
         script: 
       OnHarvest:
-        script: 
+        script: seed 1
       OnWerewolfContact:
         script: 'kill
 
@@ -68,13 +68,13 @@ MonoBehaviour:
       OnEnd:
         script: 
       OnHarvest:
-        script: 
+        script: seed 2
       OnWerewolfContact:
         script: 'kill
 
           damage'
-      HP: 2
-    - minDaysToGrow: 5
+      HP: 1
+    - minDaysToGrow: 3
       growthCondition:
         script: 
       OnStart:
@@ -82,12 +82,14 @@ MonoBehaviour:
       OnEnd:
         script: 
       OnHarvest:
-        script: food 4
+        script: 'food 4
+
+          seed 1'
       OnWerewolfContact:
         script: 'kill
 
           damage'
-      HP: 3
+      HP: 2
     - minDaysToGrow: 50
       growthCondition:
         script: 
@@ -96,9 +98,11 @@ MonoBehaviour:
       OnEnd:
         script: 
       OnHarvest:
-        script: 
+        script: seed 3
       OnWerewolfContact:
-        script: destroy
+        script: 'kill
+
+          damage'
       HP: 3
     viewPrefab: {fileID: 9107143928819659692, guid: b31673aaad6064442aba0057ec2b0310,
       type: 3}
@@ -149,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData:
-    numberOfWWToSpawn: 5
+    numberOfWWToSpawn: 1
     cycles:
     - name: DN
       timePerStage: 5
@@ -185,12 +189,14 @@ MonoBehaviour:
         onStart:
           script: 'timescale 10
 
-            spawnwolves'
+            spawnwolves
+
+            nightsound'
         onEnd:
           script: 
       - name: 'Night - '
         onStart:
-          script: 
+          script: sleepsound
         onEnd:
           script: 
       - name: Night
@@ -209,8 +215,9 @@ MonoBehaviour:
         onEnd:
           script: timescale 1
       startingStage: 9
+      currentTime: 0
     - name: Seasons
-      timePerStage: 90
+      timePerStage: 150
       stages:
       - name: Spring
         onStart:
@@ -233,6 +240,7 @@ MonoBehaviour:
         onEnd:
           script: 
       startingStage: 0
+      currentTime: 60
     - name: Lunar
       timePerStage: 50
       stages:
@@ -279,23 +287,28 @@ MonoBehaviour:
         onEnd:
           script: 
       startingStage: 0
-    foodSupply: 30
+      currentTime: -25
+    foodSupply: 15
     seedAmount: 5
-    maxDaysHungry: 10
+    maxDaysHungry: 9
     selectedSeed: 0
     generateSockets: 1
-    socketDensity: 10
+    socketDensity: 20
     hadKids: 0
     playerCharacter:
       Speed: 10
       Age: 20
-      AgeOfDeath: 70
+      AgeOfDeath: 20.75
       DaysHungry: 0
-      selfish: 0
+      Selfish: 0
+      hat: {r: 0.10933607, g: 0.5943396, b: 0.25380206, a: 1}
+      vest: {r: 0.3584906, g: 0.20073596, b: 0.12547171, a: 1}
     characters: []
   player: {fileID: 0}
   running: 1
-  GoingToBed: 0
-  secondsBeforeNextKid: 1
+  GoingToBed: 1
+  secondsBeforeNextKid: 10
   gameOverScreen_WW: {fileID: 0}
   gameOverScreen_Extinct: {fileID: 0}
+  debugScreen: {fileID: 0}
+  heirManager: {fileID: 0}

@@ -1,0 +1,483 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WWTeset
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 6995fa1054b479a4d81a7f8f08935aeb,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.numberOfWWToSpawn
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].name
+    value: DN
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].timePerStage
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.size
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[0].name
+    value: Day - Sunrise
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[0].onStart.script
+    value: 'newday
+
+      bed 0'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[0].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[1].name
+    value: Day - Morning
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[1].onStart.script
+    value: eat
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[1].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[2].name
+    value: Day - Noon
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[2].onStart.script
+    value: eat
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[2].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[3].name
+    value: Day - Afternoon
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[3].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[3].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[4].name
+    value: Day - Evening
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[4].onStart.script
+    value: bed 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[4].onEnd.script
+    value: eat
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[5].name
+    value: Night - Dusk
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[5].onStart.script
+    value: 'timescale 10
+
+      spawnwolves
+
+      nightsound'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[5].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[6].name
+    value: 'Night - '
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[6].onStart.script
+    value: sleepsound
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[6].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[7].name
+    value: Night
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[7].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[7].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[8].name
+    value: Night
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[8].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[8].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[9].name
+    value: Night - Dawn
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[9].onStart.script
+    value: despawnwolves
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].stages.Array.data[9].onEnd.script
+    value: timescale 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].startingStage
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[0].currentTime
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].name
+    value: Seasons
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].timePerStage
+    value: 150
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[0].name
+    value: Spring
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[0].onStart.script
+    value: werewolves +1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[0].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[1].name
+    value: Summer
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[1].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[1].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[2].name
+    value: Autumn
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[2].onStart.script
+    value: werewolves +1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[2].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[3].name
+    value: Winter
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[3].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].stages.Array.data[3].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].startingStage
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[1].currentTime
+    value: 60
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].name
+    value: Lunar
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].timePerStage
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.size
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[0].name
+    value: New Moon
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[0].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[0].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[1].name
+    value: Waxing Crescent
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[1].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[1].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[2].name
+    value: First Quarter
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[2].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[2].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[3].name
+    value: Waxing Gibbous
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[3].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[3].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[4].name
+    value: Full Moon
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[4].onStart.script
+    value: 'timescale 1
+
+      timescalelock 1'
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[4].onEnd.script
+    value: timescalelock 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[5].name
+    value: Waning Gibbous
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[5].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[5].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[6].name
+    value: Last Quarter
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[6].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[6].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[7].name
+    value: Waning Crescent
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[7].onStart.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].stages.Array.data[7].onEnd.script
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].startingStage
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.cycles.Array.data[2].currentTime
+    value: -25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.foodSupply
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.seedAmount
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.maxDaysHungry
+    value: 100
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.selectedSeed
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.generateSockets
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.socketDensity
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.hadKids
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.Speed
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.Age
+    value: 20
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.AgeOfDeath
+    value: 22
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.DaysHungry
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.Selfish
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.hat.r
+    value: 0.10933607
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.hat.g
+    value: 0.5943396
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.hat.b
+    value: 0.25380206
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.hat.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.vest.r
+    value: 0.3584906
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.vest.g
+    value: 0.20073596
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.vest.b
+    value: 0.12547171
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.playerCharacter.vest.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameData.characters.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: player
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: running
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: GoingToBed
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: secondsBeforeNextKid
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameOverScreen_WW
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: gameOverScreen_Extinct
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: debugScreen
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: heirManager
+    value: 
+    objectReference: {fileID: 0}

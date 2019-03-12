@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuDynamic.unity
+    guid: f702b5669679a294cbfb71a32b0fc9a9
+  - enabled: 1
     path: Assets/Scenes/Prototype_Mouse.unity
     guid: 48026646be6dca344b923e77b3cbbbdd
   m_configObjects: {}
